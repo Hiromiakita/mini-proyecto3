@@ -32,7 +32,26 @@ const Main = () => {
 
         fetch(URL, { method: 'DELETE' })
             .then(body => body.json())
-            .then(respuesta => console.log(respuesta));
+            .then(respuesta => {
+                // Refrescar las tareas
+                getTareas();
+                console.log(respuesta)
+            });
+    }
+
+    // Función que actualiza una tarea: Cambia el status de completada a true
+    const actualizarTarea = (id, titulo, descripcion, completada) => {
+        const URL = `https://mini-proyecto3-m5-default-rtdb.firebaseio.com/tareas/${id}.json`;
+
+        let objetoBody = {
+            titulo,
+            descripcion,
+            completada
+        }
+
+        fetch(URL, {method: 'PATCH', body: JSON.stringify(objetoBody)})
+            .then(respuesta => respuesta.json())
+            .then(res => console.log(res));
     }
 
     // 1. Enviar como prop la función deleteTarea al componente TareaCard
