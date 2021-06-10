@@ -37,6 +37,9 @@ const Main = () => {
     // 1. Enviar como prop la función deleteTarea al componente TareaCard
     // 2. En TareaCard necesitamos recibir como prop la función deleteTarea
     // 3. Mandar llamar función en TareaCard cuando se haga click en el botón eliminar
+    // 4. Pasar identificador como prop a la TareaCard
+    // 5. En TareaCard necesitamos recibir como prop el parámetro identificador
+
 
     // El callback del useEffect se ejecutará antes de que el componente se monte
     useEffect(() => {
