@@ -3,7 +3,7 @@ import React from 'react'
 const TareaCard = (props) => {
 
     // Destructurar: Sacar las propiedades del objeto y guardarlas en variables
-    const {titulo, descripcion, completada} = props;
+    const {titulo, descripcion, completada, deleteTarea, identificador} = props;
 
     return (
         <div className="card" style={{width: "18rem"}}>
@@ -12,9 +12,8 @@ const TareaCard = (props) => {
                 <p className="card-text">{descripcion}</p>
                 <div className="d-flex justify-content-between">
                     <button className="btn btn-primary">Completar</button>
-                    <button className="btn btn-danger">Eliminar</button>
+                    <button onClick={() => { deleteTarea(identificador)}} className="btn btn-danger">Eliminar</button>
                 </div>
-                
             </div>
         </div>
     )
