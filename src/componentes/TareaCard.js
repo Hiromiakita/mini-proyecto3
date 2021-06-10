@@ -11,8 +11,8 @@ const TareaCard = (props) => {
                 <h5 className="card-title">{titulo}</h5>
                 <p className="card-text">{descripcion}</p>
                 <div className="d-flex justify-content-between">
-                    <a href="a" className="btn btn-primary">Completar</a>
-                    <a href="a" className="btn btn-danger">Eliminar</a>
+                    <button className="btn btn-primary">Completar</button>
+                    <button className="btn btn-danger">Eliminar</button>
                 </div>
                 
             </div>
