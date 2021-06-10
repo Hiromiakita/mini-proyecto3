@@ -27,10 +27,11 @@ const Main = () => {
 
     // Función que elimina una tarea
     const deleteTarea = (id) => {
+        console.log('delete tarea');
         const URL = `https://mini-proyecto3-m5-default-rtdb.firebaseio.com/tareas/${id}.json`;
 
         fetch(URL, { method: 'DELETE' })
-            .then(body => body.json)
+            .then(body => body.json())
             .then(respuesta => console.log(respuesta));
     }
 
@@ -66,6 +67,8 @@ const Main = () => {
                             titulo = {tareas[identificador].titulo} 
                             descripcion = {tareas[identificador].descripcion}
                             completada = {tareas[identificador].completada}
+                            deleteTarea = {deleteTarea}
+                            identificador = {identificador}
                             key={identificador}/>)
                 }
             </div>
