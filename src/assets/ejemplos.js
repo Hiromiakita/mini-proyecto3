@@ -33,16 +33,20 @@ const objetoData = {
         apellido: 'López'
     },
     "persona2" : {
-        nombre: 'Diana',
+        nombre: 'Julia',
         apellido: 'López'
     },
     "persona3" : {
-        nombre: 'Diana',
+        nombre: 'Juan',
         apellido: 'López'
     },
     "persona4" : {
-        nombre: 'Diana',
+        nombre: 'Aldo',
         apellido: 'López'
+    },
+    "persona5" : {
+        nombre: 'Jorge',
+        apellido: 'X'
     }
 };
 
@@ -51,6 +55,22 @@ console.log(objetoData['persona1'].nombre);
 console.log(objetoData['persona1']['nombre']);
 console.log(objetoData.persona1['nombre']);
 
-//Recorer un objeto de objetos:
+// Recorer un objeto de objetos:
 
-objetoData.map(elemento => console.log('hola'));
+// ERROR: No podemos usar map en un objeto, sólo en un array.
+// objetoData.map(elemento => console.log('hola'));
+
+// Paso 1: Creamos un array con las keys del objeto iterar
+// const arrayKeys = Object.keys(objetoData);
+// console.log(arrayKeys);
+
+// Paso 2: iteramos array de keys y accedemos a cada objeto 
+// arrayKeys.map(key => console.log(objetoData[key].nombre));
+
+// Lo mismo de arriba pero en un solo paso
+Object.keys(objetoData).map(key => console.log(objetoData[key].nombre));
+
+// Otra forma de iterar un objeto
+for (const property in objetoData) {
+    console.log(objetoData[property].nombre);
+}
