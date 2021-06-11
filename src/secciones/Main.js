@@ -65,6 +65,20 @@ const Main = () => {
     // 5. En TareaCard necesitamos recibir como prop el parámetro identificador
 
 
+    const crearTarea = (titulo, descripcion) => {
+        const URL = 'https://mini-proyecto3-m5-default-rtdb.firebaseio.com/tareas.json';
+
+        const objBody = {
+            titulo,
+            descripcion,
+            completada: false
+        };
+
+        fetch(URL, { method: 'POST', body: JSON.stringify(objBody)})
+            .then(body => body.json())
+            .then(respuesta => console.log(respuesta));
+    }
+
     // El callback del useEffect se ejecutará antes de que el componente se monte
     useEffect(() => {
         getTareas();
@@ -75,7 +89,7 @@ const Main = () => {
         <div className="container">
             <h1>Tareas</h1>
             <div className="my-5">
-                <Crear/>
+                <Crear crearTarea={crearTarea}/>
             </div>
             
             {/* <TareaCard 
