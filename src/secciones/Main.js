@@ -67,16 +67,17 @@ const Main = () => {
 
     const crearTarea = (titulo, descripcion) => {
         const URL = 'https://mini-proyecto3-m5-default-rtdb.firebaseio.com/tareas.json';
-
-        const objBody = {
-            titulo,
-            descripcion,
-            completada: false
-        };
-
-        fetch(URL, { method: 'POST', body: JSON.stringify(objBody)})
-            .then(body => body.json())
-            .then(respuesta => console.log(respuesta));
+        if(titulo && descripcion) {
+            const objBody = {
+                titulo,
+                descripcion,
+                completada: false
+            };
+    
+            fetch(URL, { method: 'POST', body: JSON.stringify(objBody)})
+                .then(body => body.json())
+                .then(respuesta => getTareas()); 
+        }
     }
 
     // El callback del useEffect se ejecutará antes de que el componente se monte
