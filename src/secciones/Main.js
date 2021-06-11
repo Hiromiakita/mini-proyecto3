@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Crear from '../componentes/Crear';
 import TareaCard from '../componentes/TareaCard';
 
 const Main = () => {
@@ -72,7 +73,11 @@ const Main = () => {
 
     return (
         <div className="container">
-            <h1>Soy la sección principal</h1>
+            <h1>Tareas</h1>
+            <div className="my-5">
+                <Crear/>
+            </div>
+            
             {/* <TareaCard 
                 titulo="Titulo X" 
                 descripcion="Descripción X" 
