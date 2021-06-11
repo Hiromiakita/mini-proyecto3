@@ -11,7 +11,7 @@ const Crear = () => {
                 <label for="inputDescripcion" className="form-label">Descripción Tarea</label>
                 <input type="text" className="form-control" id="inputDescripcion" />
             </div>
-            <button type="submit" className="btn btn-primary">Crear Tarea</button>
+            <button type="submit" className="btn btn-primary">Crear tarea</button>
         </form>
     )
 }
