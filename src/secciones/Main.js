@@ -49,9 +49,12 @@ const Main = () => {
             completada
         }
 
-        fetch(URL, {method: 'PATCH', body: JSON.stringify(objetoBody)})
+        fetch(URL, { method: 'PATCH', body: JSON.stringify(objetoBody) })
             .then(respuesta => respuesta.json())
-            .then(res => console.log(res));
+            .then(res => {
+                console.log(res);
+                getTareas();
+            });
     }
 
     // 1. Enviar como prop la función deleteTarea al componente TareaCard
@@ -87,6 +90,7 @@ const Main = () => {
                             descripcion = {tareas[identificador].descripcion}
                             completada = {tareas[identificador].completada}
                             deleteTarea = {deleteTarea}
+                            actualizarTarea = {actualizarTarea}
                             identificador = {identificador}
                             key={identificador}/>)
                 }
