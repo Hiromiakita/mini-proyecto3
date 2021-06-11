@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Crear = () => {
+const Crear = (props) => {
+
+    const { crearTarea } = props;
+
     return (
         <form>
             <div className="mb-3">
